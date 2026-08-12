@@ -79,7 +79,7 @@ spawn-at-startup "firefox"
 spawn-at-startup "happ"
 spawn-at-startup "Telegram"
 spawn-at-startup "waybar"
-spawn-at-startup "./scripts/wallpaper-cycle.sh"
+spawn-at-startup "~/.dotfiles/config/niri/scripts/wallpaper-cycle.sh"
 
 window-rule {
     draw-border-with-background false
