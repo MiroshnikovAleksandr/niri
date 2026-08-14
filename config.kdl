@@ -75,11 +75,19 @@ hotkey-overlay {
 
 screenshot-path "~/Pictures/screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 
+spawn-sh-at-startup "systemctl --user import-environment WAYLAND_DISPLAY && systemctl --user start swayidle"
 spawn-at-startup "firefox"
 spawn-at-startup "happ"
-spawn-at-startup "Telegram"
 spawn-at-startup "waybar"
-spawn-at-startup "~/.dotfiles/config/niri/scripts/wallpaper-cycle.sh"
+spawn-sh-at-startup "nm-applet --indicator"
+spawn-at-startup "Telegram"
+spawn-at-startup "~/.config/niri/scripts/wallpaper-cycle.sh"
+//
+// switch-events {
+//     lid-close { 
+//         spawn "systemctl" "suspend"
+//     }
+// }
 
 window-rule {
     draw-border-with-background false
@@ -124,6 +132,12 @@ window-rule {
 window-rule {
     match app-id="org.telegram.desktop"
     open-on-workspace "home"
+}
+
+window-rule {
+    match app-id="kitty"
+    open-maximized true 
+    open-maximized-to-edges true
 }
 
 binds {
@@ -333,6 +347,16 @@ gestures {
 
 layer-rule {
     match namespace="^wallpaper$"
+    place-within-backdrop true
+}
+
+layer-rule {
+    match namespace="^waybar$"
+    opacity 1.0
+}
+
+layer-rule {
+    match namespace="^quickshell$"
     place-within-backdrop true
 }
 

@@ -7,7 +7,7 @@ if [ ! -d "$WALLPAPER_DIR" ]; then
 fi
 
 while true; do
-    ~/.dotfiles/config/niri/scripts/wallpaper-switch.sh
+    ~/.config/niri/scripts/wallpaper-switch.sh
     
     sleep 180
 done
