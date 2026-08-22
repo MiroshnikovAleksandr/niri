@@ -146,6 +146,7 @@ binds {
     Mod+Return { spawn "kitty"; }
     Mod+S { spawn "fuzzel"; }
     Super+Alt+L { spawn "swaylock"; }
+    Mod+N { spawn "~/.config/niri/scripts/wallpaper-switch.sh"; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }
