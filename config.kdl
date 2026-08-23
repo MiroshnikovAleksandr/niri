@@ -82,12 +82,6 @@ spawn-at-startup "waybar"
 spawn-sh-at-startup "nm-applet --indicator"
 spawn-at-startup "Telegram"
 spawn-at-startup "~/.config/niri/scripts/wallpaper-cycle.sh"
-//
-// switch-events {
-//     lid-close { 
-//         spawn "systemctl" "suspend"
-//     }
-// }
 
 window-rule {
     draw-border-with-background false
@@ -158,6 +152,7 @@ binds {
     Super+Alt+L { spawn "swaylock"; }
     Mod+N { spawn "~/.config/niri/scripts/wallpaper-switch.sh"; }
     Mod+B { spawn "kitty" "--class" "bluetui-floating" "-o" "tab_bar_style=hidden" "-o" "background_opacity=1.0" "-e" "bluetui"; }
+    Mod+Space { spawn-sh "pkill -xf \"waybar -c $HOME/.config/togglebar/config.json -s $HOME/.config/togglebar/style.css\" || waybar -c $HOME/.config/togglebar/config.json -s $HOME/.config/togglebar/style.css"; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }
