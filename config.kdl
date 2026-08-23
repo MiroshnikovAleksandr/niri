@@ -140,6 +140,16 @@ window-rule {
     open-maximized-to-edges true
 }
 
+window-rule {
+    match app-id="bluetui-floating"
+    open-maximized false 
+    open-maximized-to-edges false
+    open-floating true
+    default-column-width { proportion 0.5; }
+    default-window-height { proportion  0.5; }
+    opacity 1.0
+}
+
 binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
@@ -147,6 +157,7 @@ binds {
     Mod+S { spawn "fuzzel"; }
     Super+Alt+L { spawn "swaylock"; }
     Mod+N { spawn "~/.config/niri/scripts/wallpaper-switch.sh"; }
+    Mod+B { spawn "kitty" "--class" "bluetui-floating" "-o" "tab_bar_style=hidden" "-o" "background_opacity=1.0" "-e" "bluetui"; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }
