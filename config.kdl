@@ -142,6 +142,17 @@ window-rule {
     default-column-width { proportion 0.5; }
     default-window-height { proportion  0.5; }
     opacity 1.0
+    focus-ring {
+        off
+    }
+    border {
+        active-color "#c4a7e7"
+        inactive-color "#c4a7e7"
+        urgent-color "#c4a7e7"
+        width 2
+    }
+
+    geometry-corner-radius 12
 }
 
 binds {
@@ -153,6 +164,7 @@ binds {
     Mod+N { spawn "~/.config/niri/scripts/wallpaper-switch.sh"; }
     // Mod+B { spawn "kitty" "--class" "bluetui-floating" "-o" "tab_bar_style=hidden" "-o" "background_opacity=1.0" "-e" "bluetui"; }
     Mod+B { spawn "bluetui-applet"; }
+    Mod+I { spawn "networkmanager_dmenu"; }
     Mod+Space { spawn-sh "pkill -xf \"waybar -c $HOME/.config/togglebar/config.json -s $HOME/.config/togglebar/style.css\" || waybar -c $HOME/.config/togglebar/config.json -s $HOME/.config/togglebar/style.css"; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+"; }
