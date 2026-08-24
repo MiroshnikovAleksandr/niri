@@ -166,7 +166,7 @@ binds {
     // Mod+B { spawn "kitty" "--class" "bluetui-floating" "-o" "tab_bar_style=hidden" "-o" "background_opacity=1.0" "-e" "bluetui"; }
     Mod+B { spawn "bluetui-applet"; }
     Mod+I { spawn "networkmanager_dmenu"; }
-    Mod+Space { spawn-sh "if pkill -xf \"waybar -c $HOME/.config/togglebar/config.json -s $HOME/.config/togglebar/style.css\"; then waybar & else pkill waybar; waybar -c $HOME/.config/togglebar/config.json -s $HOME/.config/togglebar/style.css & fi" }
+    Mod+Space { spawn-sh "if pkill -xf \"waybar -c $HOME/.config/togglebar/config.json -s $HOME/.config/togglebar/style.css\"; then waybar & else pkill waybar; waybar -c $HOME/.config/togglebar/config.json -s $HOME/.config/togglebar/style.css & fi"; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }
