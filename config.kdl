@@ -146,12 +146,13 @@ window-rule {
         off
     }
     border {
+        on
         active-color "#c4a7e7"
         inactive-color "#c4a7e7"
         urgent-color "#c4a7e7"
         width 2
     }
-
+    clip-to-geometry true
     geometry-corner-radius 12
 }
 
@@ -165,7 +166,7 @@ binds {
     // Mod+B { spawn "kitty" "--class" "bluetui-floating" "-o" "tab_bar_style=hidden" "-o" "background_opacity=1.0" "-e" "bluetui"; }
     Mod+B { spawn "bluetui-applet"; }
     Mod+I { spawn "networkmanager_dmenu"; }
-    Mod+Space { spawn-sh "pkill -xf \"waybar -c $HOME/.config/togglebar/config.json -s $HOME/.config/togglebar/style.css\" || waybar -c $HOME/.config/togglebar/config.json -s $HOME/.config/togglebar/style.css"; }
+    Mod+Space { spawn-sh "pkill -xf \"waybar -c $HOME/.config/togglebar/config.json -s $HOME/.config/togglebar/style.css\" ; waybar || pkill waybar ; waybar -c $HOME/.config/togglebar/config.json -s $HOME/.config/togglebar/style.css"; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }
