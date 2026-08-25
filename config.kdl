@@ -101,6 +101,7 @@ window-rule {
     default-window-height { proportion 0.4; }
     default-column-width { proportion 0.4; }
     open-focused false
+    on-xdg-activate "ignore"
 }
 
 window-rule {
