@@ -163,11 +163,6 @@ window-rule {
     default-column-width { proportion 0.33; }
 }
 
-window-rule {
-    match app-id="Vboard.py"
-    open-floating true
-}
-
 binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
@@ -398,4 +393,9 @@ overview {
     workspace-shadow { 
         off
     }
+}
+
+switch-events {
+    tablet-mode-on { spawn "niri" "msg" "output" "eDP-1" "transform" "180"; }
+    tablet-mode-off { spawn "niri" "msg" "output" "eDP-1" "transform" "normal"; }
 }
