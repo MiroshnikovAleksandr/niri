@@ -395,6 +395,10 @@ overview {
 }
 
 switch-events {
-    tablet-mode-on { spawn "niri" "msg" "output" "eDP-1" "transform" "180"; }
+    tablet-mode-on {
+      spawn-sh "pkill waybar";
+      spawn-sh "waybar -c \"$HOME/.config/togglebar/config.json\" -s \"$HOME/.config/togglebar/style.css\" &";
+      spawn "niri" "msg" "output" "eDP-1" "transform" "180";
+    }
     tablet-mode-off { spawn "niri" "msg" "output" "eDP-1" "transform" "normal"; }
 }
