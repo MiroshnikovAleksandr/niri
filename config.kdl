@@ -116,6 +116,7 @@ window-rule {
     exclude title="^Picture-in-Picture$"
     match at-startup=true app-id=r#"firefox$"# is-floating=false
     open-on-workspace "home"
+    open-focused false
 }
 
 window-rule {
