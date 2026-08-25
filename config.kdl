@@ -156,6 +156,18 @@ window-rule {
     geometry-corner-radius 12
 }
 
+window-rule {
+    match app-id="python-numpy"
+    open-maximized false 
+    open-maximized-to-edges false
+    default-column-width { proportion 0.33; }
+}
+
+window-rule {
+    match app-id="Vboard.py"
+    open-floating true
+}
+
 binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
@@ -167,6 +179,7 @@ binds {
     Mod+B { spawn "bluetui-applet"; }
     Mod+I { spawn "networkmanager_dmenu"; }
     Mod+Space { spawn-sh "if pkill -xf \"waybar -c $HOME/.config/togglebar/config.json -s $HOME/.config/togglebar/style.css\"; then waybar & else pkill waybar; waybar -c $HOME/.config/togglebar/config.json -s $HOME/.config/togglebar/style.css & fi"; }
+    Mod+Shift+C { spawn "python-numpy"; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }
